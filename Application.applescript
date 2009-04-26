@@ -33,6 +33,16 @@ on clicked theObject
 		close window "ProgressWindow"
 		display dialog "Process canceled" buttons {"OK"} giving up after 5
 		quit
+	else if name of theObject is "inputButton" then
+		set newFileName to choose file name with prompt ¬
+			"Please provide a name for the newly created movie:" default name ¬
+			"SplitVideo.mp4" default location (outputFolder as alias)
+	else if name of theObject is "outputButton" then
+		set newFileName to choose file name with prompt ¬
+			"Save extracted video as:" default name ¬
+			"SplitVideo.mp4" default location (outputFolder as alias)
+		set newFilePath to quoted form of POSIX path of newFileName
+		set the contents of text field "outputField" of window "MainWindow" to newFilePath as text
 	end if
 end clicked
 
