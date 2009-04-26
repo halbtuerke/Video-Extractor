@@ -529,8 +529,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {624, 215}}</string>
-									<string>{{624, 0}, {656, 215}}</string>
+									<string>{{0, 0}, {625, 214}}</string>
+									<string>{{625, 0}, {655, 214}}</string>
 								</array>
 							</dict>
 							<key>VerticalSplitView</key>
@@ -545,8 +545,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {1280, 215}}</string>
-									<string>{{0, 215}, {1280, 228}}</string>
+									<string>{{0, 0}, {1280, 214}}</string>
+									<string>{{0, 214}, {1280, 229}}</string>
 								</array>
 							</dict>
 						</dict>
@@ -576,10 +576,10 @@
 								<string>Value</string>
 								<real>85</real>
 								<string>Summary</string>
-								<real>426</real>
+								<real>425</real>
 							</array>
 							<key>Frame</key>
-							<string>{{624, 0}, {656, 215}}</string>
+							<string>{{625, 0}, {655, 214}}</string>
 							<key>RubberWindowFrame</key>
 							<string>0 54 1280 724 0 0 1280 778 </string>
 						</dict>
@@ -607,14 +607,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CDD9B79F0F9E0A980080E5DE</string>
+				<string>CDE8EC750FA4A64A0073451F</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CDD9B7A00F9E0A980080E5DE</string>
-				<string>CDD9B7A10F9E0A980080E5DE</string>
-				<string>CDD9B7A20F9E0A980080E5DE</string>
-				<string>CDD9B7A30F9E0A980080E5DE</string>
-				<string>CD1E2AF10E96825000A03D54</string>
+				<string>CDE8EC760FA4A64A0073451F</string>
+				<string>CDE8EC770FA4A64A0073451F</string>
+				<string>CDE8EC780FA4A64A0073451F</string>
+				<string>CDE8EC790FA4A64A0073451F</string>
+				<string>CDE8EC7A0FA4A64A0073451F</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>

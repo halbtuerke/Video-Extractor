@@ -104,12 +104,12 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 262015584;
-			PBXWorkspaceStateSaveDate = 262015584;
+			PBXPerProjectTemplateStateSaveDate = 262448711;
+			PBXWorkspaceStateSaveDate = 262448711;
 		};
 		perUserProjectItems = {
-			CDD9B7AE0F9E0B390080E5DE /* PBXTextBookmark */ = CDD9B7AE0F9E0B390080E5DE /* PBXTextBookmark */;
-			CDD9B7C40F9E22620080E5DE /* PBXTextBookmark */ = CDD9B7C40F9E22620080E5DE /* PBXTextBookmark */;
+			CDD9B7AE0F9E0B390080E5DE = CDD9B7AE0F9E0B390080E5DE /* PBXTextBookmark */;
+			CDD9B7C40F9E22620080E5DE = CDD9B7C40F9E22620080E5DE /* PBXTextBookmark */;
 		};
 		sourceControlManager = 25D9446E07B15AA800FF306F /* Source Control */;
 		userBuildSettings = {
