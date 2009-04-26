@@ -276,8 +276,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
-									<integer>1</integer>
+									<integer>4</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -325,10 +325,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CDD9B7C40F9E22620080E5DE</string>
+										<string>CDE8ECBF0FA4ADE60073451F</string>
 										<key>history</key>
 										<array>
-											<string>CDD9B7AE0F9E0B390080E5DE</string>
+											<string>CDE8ECBC0FA4ADA70073451F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -342,16 +342,16 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1073, 418}}</string>
+								<string>{{0, 0}, {1073, 599}}</string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>418pt</string>
+							<string>599pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>260pt</string>
+							<string>79pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -365,7 +365,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1073, 233}}</string>
+										<string>{{10, 27}, {1073, 52}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -447,11 +447,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CDD9B79C0F9E0A980080E5DE</string>
+				<string>CDE8EC850FA4AAD90073451F</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CDD9B79D0F9E0A980080E5DE</string>
+				<string>CDE8EC860FA4AAD90073451F</string>
 				<string>CD1E2AF10E96825000A03D54</string>
-				<string>CDD9B79E0F9E0A980080E5DE</string>
+				<string>CDE8EC870FA4AAD90073451F</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>

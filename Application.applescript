@@ -111,7 +111,8 @@ on open names
 		quit
 	else
 		set filePath to quoted form of POSIX path of fileToSplit
-		
+		set the contents of text field "inputField" of window "MainWindow" to filePath as text
+		(*
 		set newFileName to choose file name with prompt ¬
 			"Please provide a name for the newly created movie:" default name ¬
 			"SplitVideo.mp4" default location (outputFolder as alias)
@@ -147,9 +148,12 @@ on open names
 				set timeCodeIncorrect to false
 			end if
 		end repeat
-		
+		*)
+		show window "MainWindow"
 	end if
 	
-	processFile()
-	quit
+	
+	--	processFile()
+	--	quit
+	
 end open
