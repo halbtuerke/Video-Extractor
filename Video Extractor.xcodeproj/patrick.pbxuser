@@ -1,0 +1,145 @@
+// !$*UTF8*$!
+{
+	25757362072882A0000BE9CA /* Video Extractor */ = {
+		activeExec = 0;
+		executables = (
+			25D9446807B15AA000FF306F /* Video Extractor */,
+		);
+	};
+	25D9446807B15AA000FF306F /* Video Extractor */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-1" = {
+				PBXLSLaunchAction = 1;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = ASKDebuggerLaunchConfig;
+				displayName = "AppleScript Debugger";
+				identifier = com.apple.AppleScriptStudio.ASKDebugLaunchConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = ASKDebugger;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+			{
+				active = NO;
+				name = AEDebug;
+				value = 1;
+			},
+			{
+				active = NO;
+				name = AEDebugSends;
+				value = 1;
+			},
+			{
+				active = NO;
+				name = AEDebugReceives;
+				value = 1;
+			},
+			{
+				active = NO;
+				name = AEDebugVerbose;
+				value = 1;
+			},
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Video Extractor";
+		sourceDirectories = (
+		);
+	};
+	25D9446E07B15AA800FF306F /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	25D9446F07B15AA800FF306F /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 25D9446807B15AA000FF306F /* Video Extractor */;
+		activeTarget = 25757362072882A0000BE9CA /* Video Extractor */;
+		codeSenseManager = 25D9446F07B15AA800FF306F /* Code sense */;
+		executables = (
+			25D9446807B15AA000FF306F /* Video Extractor */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					834,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 262015584;
+			PBXWorkspaceStateSaveDate = 262015584;
+		};
+		perUserProjectItems = {
+			CDD9B7AE0F9E0B390080E5DE /* PBXTextBookmark */ = CDD9B7AE0F9E0B390080E5DE /* PBXTextBookmark */;
+			CDD9B7C40F9E22620080E5DE /* PBXTextBookmark */ = CDD9B7C40F9E22620080E5DE /* PBXTextBookmark */;
+		};
+		sourceControlManager = 25D9446E07B15AA800FF306F /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	CDD9B7AE0F9E0B390080E5DE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DA458A96036079E503C91932 /* Application.applescript */;
+		name = "Application.applescript: 164";
+		rLen = 0;
+		rLoc = 5422;
+		rType = 0;
+		vrLen = 422;
+		vrLoc = 0;
+	};
+	CDD9B7C40F9E22620080E5DE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = DA458A96036079E503C91932 /* Application.applescript */;
+		name = "Application.applescript: 155";
+		rLen = 0;
+		rLoc = 5422;
+		rType = 0;
+		vrLen = 735;
+		vrLoc = 903;
+	};
+	DA458A96036079E503C91932 /* Application.applescript */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 3582}}";
+			sepNavSelRange = "{5422, 0}";
+			sepNavVisRange = "{903, 735}";
+		};
+	};
+}
