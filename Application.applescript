@@ -64,7 +64,7 @@ on clicked theObject
 	else if name of theObject is "outputButton" then
 		set newFileName to choose file name with prompt ¬
 			"Save extracted video as:" default name ¬
-			"SplitVideo.mp4" default location (outputFolder as alias)
+			"Extracted_Video.mp4"
 		set newFilePath to quoted form of POSIX path of newFileName
 		set the contents of text field "outputField" of window "MainWindow" to newFilePath as text
 	else if name of theObject is "startButton" then
