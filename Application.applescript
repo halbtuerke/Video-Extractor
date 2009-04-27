@@ -27,25 +27,70 @@ on clicked theObject
 		
 		try
 			do shell script "rm " & newFilePath
-		on error
-			display dialog "Could not delete the file"
 		end try
 		
-		close window "ProgressWindow"
-		display dialog "Process canceled" buttons {"OK"} giving up after 5
 		quit
 	else if name of theObject is "inputButton" then
-		set newFileName to choose file name with prompt ¬
-			"Please provide a name for the newly created movie:" default name ¬
-			"SplitVideo.mp4" default location (outputFolder as alias)
+		set fileName to choose file with prompt ¬
+			"Please choose a movie file:" default location (outputFolder as alias) without invisibles
+		set theFileInfo to info for fileName
+		
+		-- refactor this
+		if the name extension of the theFileInfo is not in the extension_list then
+			display dialog "Sorry but your file does not appear to be a video" & return & return & ¬
+				"This dialog will close in 3 seconds" with icon 0 ¬
+				buttons {"OK"} ¬
+				giving up after 3
+		else
+			set filePath to quoted form of POSIX path of fileName
+			set the contents of text field "inputField" of window "MainWindow" to filePath as text
+		end if
 	else if name of theObject is "outputButton" then
 		set newFileName to choose file name with prompt ¬
 			"Save extracted video as:" default name ¬
 			"SplitVideo.mp4" default location (outputFolder as alias)
 		set newFilePath to quoted form of POSIX path of newFileName
 		set the contents of text field "outputField" of window "MainWindow" to newFilePath as text
+	else if name of theObject is "startButton" then
+		setBitrate()
+		setStartTimeCode()
+		setDurationTimeCode()
+		
+		log "bitrate: " & bitrate
+		log "filePath: " & filePath
+		log "newFilePath: " & newFilePath
+		log "startTimeCode: " & startTimeCode
+		log "durationTimeCode: " & durationTimeCode
+		
+		processFile()
 	end if
 end clicked
+
+on setBitrate()
+	if state of button "losslessCheckButton" of window "MainWindow" is 1 then
+		set bitrate to "-sameq"
+	else
+		set bitrate to "-b 1000k"
+	end if
+end setBitrate
+
+on setStartTimeCode()
+	set startTemp to the contents of text field "startTimeField" of window "MainWindow" as text
+	if startTemp is equal to "HH:MM:SS" then
+		set startTimeCode to "00:00:00"
+	else
+		set startTimeCode to startTemp
+	end if
+end setStartTimeCode
+
+on setDurationTimeCode()
+	set durationTemp to the contents of text field "durationTimeField" of window "MainWindow" as text
+	if durationTemp is equal to "HH:MM:SS" then
+		set durationTimeCode to "00:00:00"
+	else
+		set durationTimeCode to durationTemp
+	end if
+end setDurationTimeCode
 
 on startProgress()
 	show window "ProgressWindow"
@@ -73,7 +118,7 @@ on processFile()
 		set videoExtractorBundle_Path to call method "bundlePath" of object main bundle
 		set ffmpegBinary to videoExtractorBundle_Path & "/Contents/Resources/ffmpeg"
 		set ffmpegBinaryPath to quoted form of POSIX path of ffmpegBinary
-
+		
 		startProgress()
 		
 		log ffmpegBinaryPath
@@ -82,7 +127,7 @@ on processFile()
 		log durationTimeCode
 		log filePath
 		log newFilePath
-
+		
 		if startTimeCode is equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- just convert the file
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
