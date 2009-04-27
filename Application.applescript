@@ -29,7 +29,7 @@ on clicked theObject
 			do shell script "rm " & newFilePath
 		end try
 		
-		quit
+		-- quit
 	else if name of theObject is "inputButton" then
 		set fileName to choose file with prompt ¬
 			"Please choose a movie file:" default location (outputFolder as alias) without invisibles
