@@ -70,33 +70,47 @@ end process_running
 
 on processFile()
 	try
-		-- set ffmpegSplitterBundle_Path to call method "bundlePath" of object main bundle -- (*Work out where the app is located.*)
+		set videoExtractorBundle_Path to call method "bundlePath" of object main bundle
+		set ffmpegBinary to videoExtractorBundle_Path & "/Contents/Resources/ffmpeg"
+		set ffmpegBinaryPath to quoted form of POSIX path of ffmpegBinary
+
 		startProgress()
 		
+		log ffmpegBinaryPath
+		log bitrate
+		log startTimeCode
+		log durationTimeCode
+		log filePath
+		log newFilePath
+
 		if startTimeCode is equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- just convert the file
-			do shell script "/usr/local/bin/ffmpeg -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 -b 1000k -threads 2 -subq 4 " & ¬
-				" " & newFilePath & "&> /dev/null & echo $!"
+			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 " & ¬
+				newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
+			log ffmpegpid
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- convert from startTimeCode to end of file
-			do shell script "/usr/local/bin/ffmpeg -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 -b 1000k -threads 2 -subq 4 -ss " & ¬
-				startTimeCode & " " & newFilePath & "&> /dev/null & echo $!"
+			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
+				startTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
+			log ffmpegpid
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is not equal to "00:00:00" then
 			-- convert from startTimeCode to durationTimeCode
-			do shell script "/usr/local/bin/ffmpeg -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 -b 1000k -threads 2 -subq 4 -ss " & ¬
-				startTimeCode & "-t " & durationTimeCode & " " & newFilePath & "&> /dev/null & echo $!"
+			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
+				startTimeCode & " -t " & durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
+			log ffmpegpid
 		else
 			-- convert from start of file to durationTimeCode
-			do shell script "/usr/local/bin/ffmpeg -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 -b 1000k -threads 2 -subq 4 -t " & ¬
-				durationTimeCode & " " & newFilePath & "&> /dev/null & echo $!"
+			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -t " & ¬
+				durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
+			log ffmpegpid
 		end if
 		
 		endProgress()
