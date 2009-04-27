@@ -26,7 +26,21 @@
 		2575736C072882A0000BE9CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		2575736D072882A0000BE9CA /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */; };
 		60A014E50DBD2B4C0071D9A8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60A014E30DBD2B4C0071D9A8 /* MainMenu.xib */; };
+		CD03BB440FA5B3700008B5FE /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD03BB430FA5B3700008B5FE /* ffmpeg */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDE90A200FA5AFED00AA2118 /* Copy Static ffmpeg */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			name = "Copy Static ffmpeg";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -38,6 +52,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		60A014E40DBD2B4C0071D9A8 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		653593B5078DD4D900E8BB2F /* AppleScriptKit.sdef */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.sdef; name = AppleScriptKit.sdef; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.sdef; sourceTree = "<absolute>"; };
+		CD03BB430FA5B3700008B5FE /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA458A96036079E503C91932 /* Application.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = Application.applescript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +107,7 @@
 		29B97314FDCFA39411CA2CEA /* Video Extractor */ = {
 			isa = PBXGroup;
 			children = (
+				CD03BB430FA5B3700008B5FE /* ffmpeg */,
 				080E96DDFE201D6D7F000001 /* Scripts */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -151,6 +167,7 @@
 				25757366072882A0000BE9CA /* Resources */,
 				25757369072882A0000BE9CA /* Sources */,
 				2575736B072882A0000BE9CA /* Frameworks */,
+				CDE90A200FA5AFED00AA2118 /* Copy Static ffmpeg */,
 			);
 			buildRules = (
 			);
@@ -186,6 +203,7 @@
 			files = (
 				25757368072882A0000BE9CA /* InfoPlist.strings in Resources */,
 				60A014E50DBD2B4C0071D9A8 /* MainMenu.xib in Resources */,
+				CD03BB440FA5B3700008B5FE /* ffmpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
