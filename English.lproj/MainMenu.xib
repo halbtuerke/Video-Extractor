@@ -8,8 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="247"/>
 			<integer value="255"/>
-			<integer value="248"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -142,13 +142,13 @@
 			<object class="NSWindowTemplate" id="38793988">
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{536, 344}, {183, 120}}</string>
+				<string key="NSWindowRect">{{536, 337}, {183, 127}}</string>
 				<int key="NSWTFlags">603979776</int>
 				<string key="NSWindowTitle">Progress</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{183, 120}</string>
-				<string key="NSWindowContentMinSize">{183, 120}</string>
+				<string key="NSWindowContentMaxSize">{183, 127}</string>
+				<string key="NSWindowContentMinSize">{183, 127}</string>
 				<object class="NSView" key="NSWindowView" id="222896960">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -158,7 +158,7 @@
 							<reference key="NSNextResponder" ref="222896960"/>
 							<int key="NSvFlags">1292</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
-							<string key="NSFrame">{{20, 84}, {16, 16}}</string>
+							<string key="NSFrame">{{20, 91}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="222896960"/>
 							<int key="NSpiFlags">28938</int>
 							<double key="NSMinValue">1.600000e+01</double>
@@ -167,7 +167,7 @@
 						<object class="NSTextField" id="1006074767">
 							<reference key="NSNextResponder" ref="222896960"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{41, 49}, {125, 51}}</string>
+							<string key="NSFrame">{{41, 56}, {125, 51}}</string>
 							<reference key="NSSuperview" ref="222896960"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="89828920">
@@ -203,17 +203,17 @@
 						<object class="NSButton" id="373071135">
 							<reference key="NSNextResponder" ref="222896960"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{19, 18}, {145, 16}}</string>
+							<string key="NSFrame">{{19, 13}, {145, 28}}</string>
 							<reference key="NSSuperview" ref="222896960"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="653247380">
 								<int key="NSCellFlags">67239424</int>
-								<int key="NSCellFlags2">134479872</int>
-								<string key="NSContents">Cancel</string>
+								<int key="NSCellFlags2">134348800</int>
+								<string type="base64-UTF8" key="NSContents">Q2FuY2VsICYgUXVpdA</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
-									<double key="NSSize">9.000000e+00</double>
-									<int key="NSfFlags">3614</int>
+									<double key="NSSize">1.100000e+01</double>
+									<int key="NSfFlags">3100</int>
 								</object>
 								<reference key="NSControlView" ref="373071135"/>
 								<int key="NSButtonFlags">-2038284033</int>
@@ -225,12 +225,12 @@
 							</object>
 						</object>
 					</object>
-					<string key="NSFrameSize">{183, 120}</string>
+					<string key="NSFrameSize">{183, 127}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
-				<string key="NSMinSize">{183, 142}</string>
-				<string key="NSMaxSize">{183, 142}</string>
+				<string key="NSMinSize">{183, 149}</string>
+				<string key="NSMaxSize">{183, 149}</string>
 			</object>
 			<object class="NSWindowTemplate" id="864127942">
 				<int key="NSWindowStyleMask">7</int>
@@ -1031,13 +1031,13 @@
 							<string key="appleScriptObjectName">ProgressWindow</string>
 						</object>
 					</object>
-					<string>{{345, 486}, {183, 120}}</string>
-					<string>{{345, 486}, {183, 120}}</string>
+					<string>{{344, 479}, {183, 127}}</string>
+					<string>{{344, 479}, {183, 127}}</string>
 					<boolean value="NO"/>
 					<boolean value="YES" id="5"/>
 					<reference ref="5"/>
-					<string>{183, 120}</string>
-					<string>{183, 120}</string>
+					<string>{183, 127}</string>
+					<string>{183, 127}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSMutableDictionary">
 						<string key="NS.key.0">IBAppleScriptAttributeName</string>
@@ -1047,7 +1047,7 @@
 							<int key="appleScriptObjectID">0</int>
 							<int key="appleScriptScriptScope">0</int>
 							<nil key="appleScriptEventHandlerNames"/>
-							<nil key="appleScriptScriptName"/>
+							<string key="appleScriptScriptName">Application.applescript</string>
 							<string key="appleScriptObjectName">ProgressIndicator</string>
 						</object>
 					</object>
