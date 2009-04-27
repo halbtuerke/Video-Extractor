@@ -23,40 +23,33 @@ on clicked theObject
 	if name of theObject is "cancelButton" then
 		try
 			do shell script "kill -9 " & progressScriptID
-			log "ffmpegChecker killed"
 		on error
 			log "ffmpegChecker not killed"
 		end try
 		
 		try
 			do shell script "kill -9 " & ffmpegpid
-			log "ffmpeg killed"
 		on error
 			log "ffmpeg not killed"
 		end try
 		
 		try
 			do shell script "rm " & newFilePath
-			log "file deleted"
 		on error
 			log "file not removed"
 		end try
 		
-		--stop progress indicator "ProgressIndicator" of window "ProgressWindow"
-		--display dialog "Extraction canceled" buttons {"OK"} giving up after 3
-		--close window "ProgressWindow"
 		quit
 	else if name of theObject is "inputButton" then
 		set fileName to choose file with prompt ¬
-			"Please choose a movie file:" default location (outputFolder as alias) without invisibles
+			"Please choose a movie file:" without invisibles
 		set theFileInfo to info for fileName
 		
-		-- refactor this
 		if the name extension of the theFileInfo is not in the extension_list then
 			display dialog "Sorry but your file does not appear to be a video" & return & return & ¬
-				"This dialog will close in 3 seconds" with icon 0 ¬
+				"This dialog will close in 5 seconds" with icon 0 ¬
 				buttons {"OK"} ¬
-				giving up after 3
+				giving up after 5
 		else
 			set filePath to quoted form of POSIX path of fileName
 			set the contents of text field "inputField" of window "MainWindow" to filePath as text
@@ -134,21 +127,13 @@ on processFile()
 		
 		startProgress()
 		
-		log ffmpegBinaryPath
-		log bitrate
-		log startTimeCode
-		log durationTimeCode
-		log filePath
-		log newFilePath
-		
 		if startTimeCode is equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- just convert the file
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 " & ¬
 				newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			-- log ffmpegpid
-			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
 			set progressScriptID to the result
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- convert from startTimeCode to end of file
@@ -156,8 +141,7 @@ on processFile()
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
 				startTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			--log ffmpegpid
-			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
 			set progressScriptID to the result
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is not equal to "00:00:00" then
 			-- convert from startTimeCode to durationTimeCode
@@ -165,8 +149,7 @@ on processFile()
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
 				startTimeCode & " -t " & durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			--log ffmpegpid
-			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
 			set progressScriptID to the result
 		else
 			-- convert from start of file to durationTimeCode
@@ -174,15 +157,12 @@ on processFile()
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -t " & ¬
 				durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			--log ffmpegpid
-			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
 			set progressScriptID to the result
 		end if
-		
-		-- endProgress()
 	on error errMsg number errNum
 		set AppleScript's text item delimiters to ASTID
-		display dialog "Error (" & errNum & "):" & return & return & errMsg buttons "Cancel" default button 1 with icon caution
+		display dialog "Error (" & errNum & "):" & return & return & errMsg buttons "Cancel" default button 1 with icon 0
 	end try
 end processFile
 
@@ -197,12 +177,9 @@ on open names
 		display dialog "Sorry but your file does not appear to be a video" & return & return & ¬
 			"This dialog will close in 3 seconds" with icon 0 ¬
 			buttons {"OK"} ¬
-			giving up after 3
-		-- quit
+			giving up after 5
 	else
 		set filePath to quoted form of POSIX path of fileToSplit
 		set the contents of text field "inputField" of window "MainWindow" to filePath as text
-		
-		-- show window "MainWindow"
 	end if
 end open
