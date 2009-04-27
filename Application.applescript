@@ -61,6 +61,7 @@ on endProgress()
 	
 	stop progress indicator "ProgressIndicator" of window "ProgressWindow"
 	display dialog "Process finished" buttons {"OK"} giving up after 5
+	close window "ProgressWindow"
 end endProgress
 
 on process_running(process_name)
