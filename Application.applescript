@@ -13,6 +13,7 @@ property durationTimeCode : ""
 property ffmpegpid : ""
 property ASTID : ""
 property ffmpegRunning : true
+property bitrate : ""
 
 on idle
 	(* Add any idle time processing here. *)
