@@ -1,0 +1,16 @@
+tell application "Video Extractor"
+	set a to do shell script "ps ux | awk '/ffmpeg/ && !/awk/ {print $2}' &"
+	set b to a
+	
+	repeat
+		if b is equal to a then
+			set a to do shell script "ps ux | awk '/ffmpeg/ && !/awk/ {print $2}' &"
+			delay 5
+		else
+			stop progress indicator "ProgressIndicator" of window "ProgressWindow"
+			display dialog "Process finished" buttons {"OK"} giving up after 5
+			close window "ProgressWindow"
+			exit repeat
+		end if
+	end repeat
+end tell
