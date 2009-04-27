@@ -8,7 +8,7 @@ tell application "Video Extractor"
 			delay 5
 		else
 			stop progress indicator "ProgressIndicator" of window "ProgressWindow"
-			display dialog "Process finished" buttons {"OK"} giving up after 5
+			display dialog "Process finished" buttons {"OK"} giving up after 5 with icon 0
 			close window "ProgressWindow"
 			exit repeat
 		end if
