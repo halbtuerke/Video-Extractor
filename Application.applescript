@@ -1,10 +1,9 @@
--- ffmpegSplitter.applescript
--- ffmpegSplitter
+-- Application.applescript
+-- Video Exctractor
 
 --  Created by Patrick on 20.04.09.
 --  Copyright 2009 Patrick Mosby. All rights reserved.
 
-property outputFolder : (path to movies folder from user domain as Unicode text)
 property extension_list : {"flv", "avi", "mp4", "mov", "wmv", "divx", "h264", "mkv", "m4v"}
 property filePath : ""
 property newFilePath : ""
