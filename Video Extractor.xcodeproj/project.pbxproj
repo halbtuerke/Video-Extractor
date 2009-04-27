@@ -30,6 +30,7 @@
 		CD03BB440FA5B3700008B5FE /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = CD03BB430FA5B3700008B5FE /* ffmpeg */; };
 		CD2BFED60FA5DED20033CAAD /* ffmpegConvert_Progress in AppleScript */ = {isa = PBXBuildFile; fileRef = CD2BFED50FA5DED20033CAAD /* ffmpegConvert_Progress */; settings = {ATTRIBUTES = (Debug, ); }; };
 		CD9E2A3E0FA5E562005F0326 /* ffmpegConvert_Progress in Resources */ = {isa = PBXBuildFile; fileRef = CD2BFED50FA5DED20033CAAD /* ffmpegConvert_Progress */; };
+		CDEBDCD90FA60E07006B4373 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEBDCD80FA60E07006B4373 /* icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		653593B5078DD4D900E8BB2F /* AppleScriptKit.sdef */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.sdef; name = AppleScriptKit.sdef; path = /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.sdef; sourceTree = "<absolute>"; };
 		CD03BB430FA5B3700008B5FE /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		CD2BFED50FA5DED20033CAAD /* ffmpegConvert_Progress */ = {isa = PBXFileReference; explicitFileType = sourcecode.applescript; fileEncoding = 4; path = ffmpegConvert_Progress; sourceTree = "<group>"; };
+		CDEBDCD80FA60E07006B4373 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		DA206CF1015C4E2903C91932 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 		DA458A96036079E503C91932 /* Application.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = Application.applescript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CDEBDCD80FA60E07006B4373 /* icon.icns */,
 				60A014E30DBD2B4C0071D9A8 /* MainMenu.xib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				653593B5078DD4D900E8BB2F /* AppleScriptKit.sdef */,
@@ -210,6 +213,7 @@
 				25757368072882A0000BE9CA /* InfoPlist.strings in Resources */,
 				60A014E50DBD2B4C0071D9A8 /* MainMenu.xib in Resources */,
 				CD03BB440FA5B3700008B5FE /* ffmpeg in Resources */,
+				CDEBDCD90FA60E07006B4373 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
