@@ -110,62 +110,19 @@ on open names
 	set ASTID to AppleScript's text item delimiters
 	set AppleScript's text item delimiters to {"."}
 	
-	set timeCodeIncorrect to true
-	
 	set fileToSplit to first item of names
 	set theFileInfo to info for fileToSplit
 	
 	if the name extension of the theFileInfo is not in the extension_list then
 		display dialog "Sorry but your file does not appear to be a video" & return & return & ¬
-			"This dialog will auto-close in 3 seconds" with icon 0 ¬
+			"This dialog will close in 3 seconds" with icon 0 ¬
 			buttons {"OK"} ¬
 			giving up after 3
-		quit
+		-- quit
 	else
 		set filePath to quoted form of POSIX path of fileToSplit
 		set the contents of text field "inputField" of window "MainWindow" to filePath as text
-		(*
-		set newFileName to choose file name with prompt ¬
-			"Please provide a name for the newly created movie:" default name ¬
-			"SplitVideo.mp4" default location (outputFolder as alias)
 		
-		set newFilePath to quoted form of POSIX path of newFileName
-		
-		repeat while timeCodeIncorrect is equal to true
-			set timeToStart to display dialog "Please provide the start time:" default answer "HH:MM:SS"
-			if text returned of timeToStart is equal to "HH:MM:SS" then
-				set confirmation to display dialog "Do you really want to start at the beginning?" buttons {"Yes", "No"}
-				if button returned of confirmation is equal to "Yes" then
-					set startTimeCode to "00:00:00"
-					set timeCodeIncorrect to false
-				end if
-			else
-				set startTimeCode to text returned of timeToStart
-				set timeCodeIncorrect to false
-			end if
-		end repeat
-		
-		set timeCodeIncorrect to true
-		
-		repeat while timeCodeIncorrect is equal to true
-			set duration to display dialog "Please provide the duration:" default answer "HH:MM:SS"
-			if text returned of duration is equal to "HH:MM:SS" then
-				set confirmation to display dialog "Do you really want to go to the end?" buttons {"Yes", "No"}
-				if button returned of confirmation is equal to "Yes" then
-					set durationTimeCode to "00:00:00"
-					set timeCodeIncorrect to false
-				end if
-			else
-				set durationTimeCode to text returned of duration
-				set timeCodeIncorrect to false
-			end if
-		end repeat
-		*)
-		show window "MainWindow"
+		-- show window "MainWindow"
 	end if
-	
-	
-	--	processFile()
-	--	quit
-	
 end open
