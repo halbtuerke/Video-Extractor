@@ -72,14 +72,8 @@ on clicked theObject
 		setStartTimeCode()
 		setDurationTimeCode()
 		
-		log "bitrate: " & bitrate
-		log "filePath: " & filePath
-		log "newFilePath: " & newFilePath
-		log "startTimeCode: " & startTimeCode
-		log "durationTimeCode: " & durationTimeCode
-		
 		if checkTextFields() is equal to 0 then
-			display dialog "Please provide the input and output files"
+			display dialog "Please provide the input and output files" buttons {"OK"} giving up after 5 with icon 0
 		else
 			processFile()
 		end if
