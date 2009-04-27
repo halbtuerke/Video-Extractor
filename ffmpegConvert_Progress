@@ -5,10 +5,9 @@ tell application "Video Extractor"
 	repeat
 		if b is equal to a then
 			set a to do shell script "ps ux | awk '/ffmpeg/ && !/awk/ {print $2}' &"
-			delay 5
 		else
 			stop progress indicator "ProgressIndicator" of window "ProgressWindow"
-			display dialog "Process finished" buttons {"OK"} giving up after 5 with icon 0
+			display dialog "Process finished" buttons {"OK"} giving up after 5 with icon 1
 			close window "ProgressWindow"
 			exit repeat
 		end if
