@@ -23,14 +23,30 @@ end idle
 on clicked theObject
 	if name of theObject is "cancelButton" then
 		try
+			do shell script "kill -9 " & progressScriptID
+			log "ffmpegChecker killed"
+		on error
+			log "ffmpegChecker not killed"
+		end try
+
+		try
 			do shell script "kill -9 " & ffmpegpid
+			log "ffmpeg killed"
+		on error
+			log "ffmpeg not killed"
 		end try
 		
 		try
 			do shell script "rm " & newFilePath
+			log "file deleted"
+		on error
+			log "file not removed"
 		end try
 		
-		-- quit
+		--stop progress indicator "ProgressIndicator" of window "ProgressWindow"
+		--display dialog "Extraction canceled" buttons {"OK"} giving up after 3
+		--close window "ProgressWindow"
+		quit
 	else if name of theObject is "inputButton" then
 		set fileName to choose file with prompt ¬
 			"Please choose a movie file:" default location (outputFolder as alias) without invisibles
