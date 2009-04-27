@@ -122,18 +122,6 @@ on startProgress()
 	start progress indicator "ProgressIndicator" of window "ProgressWindow"
 end startProgress
 
-on endProgress()
-	set ffmpegRunning to process_running("ffmpeg")
-	
-	repeat while ffmpegRunning
-		set ffmpegRunning to process_running("ffmpeg")
-	end repeat
-	
-	stop progress indicator "ProgressIndicator" of window "ProgressWindow"
-	display dialog "Process finished" buttons {"OK"} giving up after 5
-	close window "ProgressWindow"
-end endProgress
-
 on process_running(process_name)
 	return (do shell script "ps axc") contains process_name
 end process_running
