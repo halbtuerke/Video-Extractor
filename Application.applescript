@@ -14,6 +14,7 @@ property ffmpegpid : ""
 property ASTID : ""
 property ffmpegRunning : true
 property bitrate : ""
+property progressScriptID : ""
 
 on idle
 	(* Add any idle time processing here. *)
