@@ -79,9 +79,24 @@ on clicked theObject
 		log "startTimeCode: " & startTimeCode
 		log "durationTimeCode: " & durationTimeCode
 		
-		processFile()
+		if checkTextFields() is equal to 0 then
+			display dialog "Please provide the input and output files"
+		else
+			processFile()
+		end if
 	end if
 end clicked
+
+on checkTextFields()
+	set inputFieldTemp to the contents of text field "inputField" of window "MainWindow" as text
+	set outputFieldTemp to the contents of text field "outputField" of window "MainWindow" as text
+
+	if inputFieldTemp is equal to "" or outputFieldTemp is equal to "" then
+		return 0
+	else
+		return 1
+	end if
+end checkTextFields
 
 on setBitrate()
 	if state of button "losslessCheckButton" of window "MainWindow" is 1 then
