@@ -28,7 +28,7 @@ on clicked theObject
 		on error
 			log "ffmpegChecker not killed"
 		end try
-
+		
 		try
 			do shell script "kill -9 " & ffmpegpid
 			log "ffmpeg killed"
@@ -90,7 +90,7 @@ end clicked
 on checkTextFields()
 	set inputFieldTemp to the contents of text field "inputField" of window "MainWindow" as text
 	set outputFieldTemp to the contents of text field "outputField" of window "MainWindow" as text
-
+	
 	if inputFieldTemp is equal to "" or outputFieldTemp is equal to "" then
 		return 0
 	else
@@ -166,31 +166,39 @@ on processFile()
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 " & ¬
 				newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			log ffmpegpid
+			-- log ffmpegpid
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			set progressScriptID to the result
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- convert from startTimeCode to end of file
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
 				startTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			log ffmpegpid
+			--log ffmpegpid
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			set progressScriptID to the result
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is not equal to "00:00:00" then
 			-- convert from startTimeCode to durationTimeCode
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
 				startTimeCode & " -t " & durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			log ffmpegpid
+			--log ffmpegpid
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			set progressScriptID to the result
 		else
 			-- convert from start of file to durationTimeCode
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
 				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -t " & ¬
 				durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
-			log ffmpegpid
+			--log ffmpegpid
+			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!" -- (*So the progress bar eventually stops*)
+			set progressScriptID to the result
 		end if
 		
-		endProgress()
+		-- endProgress()
 	on error errMsg number errNum
 		set AppleScript's text item delimiters to ASTID
 		display dialog "Error (" & errNum & "):" & return & return & errMsg buttons "Cancel" default button 1 with icon caution
