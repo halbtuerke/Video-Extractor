@@ -144,7 +144,7 @@
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{536, 337}, {183, 127}}</string>
-				<int key="NSWTFlags">603979776</int>
+				<int key="NSWTFlags">1677721600</int>
 				<string key="NSWindowTitle">Progress</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
@@ -1034,8 +1034,8 @@
 							<string key="appleScriptObjectName">ProgressWindow</string>
 						</object>
 					</object>
-					<string>{{344, 479}, {183, 127}}</string>
-					<string>{{344, 479}, {183, 127}}</string>
+					<string>{{382, 479}, {183, 127}}</string>
+					<string>{{382, 479}, {183, 127}}</string>
 					<boolean value="NO"/>
 					<boolean value="YES" id="5"/>
 					<reference ref="5"/>
