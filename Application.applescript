@@ -145,7 +145,7 @@ on processFile()
 		if startTimeCode is equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- just convert the file
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 " & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 " & ¬
 				newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
 			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
@@ -153,7 +153,7 @@ on processFile()
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is equal to "00:00:00" then
 			-- convert from startTimeCode to end of file
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -ss " & ¬
 				startTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
 			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
@@ -161,7 +161,7 @@ on processFile()
 		else if startTimeCode is not equal to "00:00:00" and durationTimeCode is not equal to "00:00:00" then
 			-- convert from startTimeCode to durationTimeCode
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -ss " & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -ss " & ¬
 				startTimeCode & " -t " & durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
 			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
@@ -169,7 +169,7 @@ on processFile()
 		else
 			-- convert from start of file to durationTimeCode
 			do shell script ffmpegBinaryPath & " -i " & filePath & ¬
-				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -subq 4 -t " & ¬
+				" -acodec libfaac -ab 128k -vcodec libx264 " & bitrate & " -threads 2 -t " & ¬
 				durationTimeCode & " " & newFilePath & " &> /dev/null & echo $!"
 			set ffmpegpid to the result
 			do shell script "osascript '" & videoExtractorBundle_Path & "/Contents/Resources/ffmpegConvert_Progress' &> /dev/null & echo $!"
