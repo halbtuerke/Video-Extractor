@@ -460,13 +460,13 @@
 						<object class="NSButton" id="570621186">
 							<reference key="NSNextResponder" ref="590781146"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{205, 21}, {75, 18}}</string>
+							<string key="NSFrame">{{205, 21}, {100, 18}}</string>
 							<reference key="NSSuperview" ref="590781146"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="372170274">
 								<int key="NSCellFlags">-2080244224</int>
 								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">Lossless</string>
+								<string key="NSContents">High Quality</string>
 								<reference key="NSSupport" ref="230859313"/>
 								<reference key="NSControlView" ref="570621186"/>
 								<int key="NSButtonFlags">1211912703</int>
