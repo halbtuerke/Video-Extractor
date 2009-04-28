@@ -9,6 +9,9 @@ tell application "Video Extractor"
 			stop progress indicator "ProgressIndicator" of window "ProgressWindow"
 			display dialog "Process finished" buttons {"OK"} giving up after 5 with icon 1
 			close window "ProgressWindow"
+
+			set the contents of text field "inputField" of window "MainWindow" to "" as text
+			set the contents of text field "outputField" of window "MainWindow" to "" as text
 			exit repeat
 		end if
 	end repeat
