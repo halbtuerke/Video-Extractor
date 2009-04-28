@@ -95,9 +95,9 @@ end checkTextFields
 
 on setBitrate()
 	if state of button "losslessCheckButton" of window "MainWindow" is 1 then
-		set bitrate to "-sameq"
+		set bitrate to "-crf 22 -me_method umh -subq 6"
 	else
-		set bitrate to "-b 1000k"
+		set bitrate to "-b 1000k -subq 4"
 	end if
 end setBitrate
 
