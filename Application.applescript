@@ -61,13 +61,18 @@ on clicked theObject
 		set newFilePath to quoted form of POSIX path of newFileName
 		set the contents of text field "outputField" of window "MainWindow" to newFilePath as text
 	else if name of theObject is "startButton" then
+		log "Start button pressed"
 		setBitrate()
+		log "Bitrate set"
 		setStartTimeCode()
+		log "Start time code set"
 		setDurationTimeCode()
+		log "Duration time code set"
 		
 		if checkTextFields() is equal to 0 then
 			display dialog "Please provide the input and output files" buttons {"OK"} giving up after 5 with icon 0
 		else
+			log "I'm before processFile()"
 			processFile()
 		end if
 	end if
@@ -75,11 +80,15 @@ end clicked
 
 on checkTextFields()
 	set inputFieldTemp to the contents of text field "inputField" of window "MainWindow" as text
+	log "inputFieldTemp set to: " & inputFieldTemp
 	set outputFieldTemp to the contents of text field "outputField" of window "MainWindow" as text
+	log "outputFieldTemp set to: " & outputFieldTemp
 	
 	if inputFieldTemp is equal to "" or outputFieldTemp is equal to "" then
+		log "Strings are empty"
 		return 0
 	else
+		log "Strings seem ok"
 		return 1
 	end if
 end checkTextFields
@@ -111,8 +120,11 @@ on setDurationTimeCode()
 end setDurationTimeCode
 
 on startProgress()
+	log "startProgress()"
 	show window "ProgressWindow"
+	log "showing progress window"
 	start progress indicator "ProgressIndicator" of window "ProgressWindow"
+	log "starting progress indicator"
 end startProgress
 
 on process_running(process_name)
@@ -122,8 +134,11 @@ end process_running
 on processFile()
 	try
 		set videoExtractorBundle_Path to call method "bundlePath" of object main bundle
+		log "videoExtractorBundle_Path set to: " & videoExtractorBundle_Path
 		set ffmpegBinary to videoExtractorBundle_Path & "/Contents/Resources/ffmpeg"
+		log "ffmpegBinarys set to: " & ffmpegBinary
 		set ffmpegBinaryPath to quoted form of POSIX path of ffmpegBinary
+		log "ffmpegBinaryPath set to: " & ffmpegBinaryPath
 		
 		startProgress()
 		
