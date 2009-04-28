@@ -63,11 +63,11 @@ on clicked theObject
 	else if name of theObject is "startButton" then
 		log "Start button pressed"
 		setBitrate()
-		log "Bitrate set"
+		log "Bitrate set to: " & bitrate
 		setStartTimeCode()
-		log "Start time code set"
+		log "Start time code set to: " & startTimeCode
 		setDurationTimeCode()
-		log "Duration time code set"
+		log "Duration time code set to: " & durationTimeCode
 		
 		if checkTextFields() is equal to 0 then
 			display dialog "Please provide the input and output files" buttons {"OK"} giving up after 5 with icon 0
